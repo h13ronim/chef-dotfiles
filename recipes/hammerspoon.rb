@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: dotfiles
-# Recipe:: atom
+# Recipe:: hammerspoon
 #
 # Copyright 2016, Marcin Michałowski
 #
@@ -24,7 +24,9 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-cookbook_file "#{node['etc']['passwd'][node['current_user']]['dir']}/.atom/config.cson" do
-  source "atom/config.cson"
-  action :create_if_missing
+git "#{node['etc']['passwd'][node['current_user']]['dir']}/.hammerspoon" do
+  repository 'git@github.com:h13ronim/dothammerspoon.git'
+  revision 'master'
+  action :checkout
+  user node['current_user']
 end
