@@ -44,3 +44,11 @@ end
 link "#{node['etc']['passwd'][node['current_user']]['dir']}/.zshrc" do
   to "#{node['etc']['passwd'][node['current_user']]['dir']}/.oh-my-zsh-custom/zshrc"
 end
+
+execute 'echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells' do
+  not_if 'grep /usr/local/bin/zsh /etc/shells'
+end
+
+execute 'chsh -s /usr/local/bin/zsh' do
+  not_if '[ "$SHELL" = "/usr/local/bin/zsh" ]'
+end
