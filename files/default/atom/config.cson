@@ -1,0 +1,108 @@
+"*":
+  welcome:
+    showOnStartup: false
+  core:
+    themes: [
+      "one-light-ui"
+      "solarized-light-syntax"
+    ]
+    disabledPackages: [
+      "metrics"
+    ]
+  editor:
+    invisibles: {}
+    fontSize: 15
+  linter:
+    errorPanelHeight: 90
+  react: {}
+  pigments: {}
+  fonts:
+    fontFamily: "Hack"
+  "one-light-ui":
+    layoutMode: "Compact"
+  "file-icons":
+    coloured: false
+  "vim-mode": {}
+  "git-plus":
+    splitPane: "down"
+    wordDiff: false
+  term2:
+    colors:
+      foreground:
+        red: 101
+        green: 123
+        blue: 131
+        alpha: 1
+      background:
+        red: 254
+        green: 246
+        blue: 227
+        alpha: 1
+      brightBlue:
+        red: 138
+        green: 138
+        blue: 138
+        alpha: 1
+      brightCyan:
+        red: 147
+        green: 161
+        blue: 161
+        alpha: 1
+      brightGreen:
+        red: 87
+        green: 110
+        blue: 117
+        alpha: 1
+      brightRed:
+        red: 203
+        green: 76
+        blue: 43
+        alpha: 1
+      brightWhite:
+        red: 254
+        green: 246
+        blue: 227
+        alpha: 1
+      brightYellow:
+        red: 101
+        green: 123
+        blue: 131
+        alpha: 1
+      normalBlack:
+        red: 18
+        green: 53
+        blue: 65
+        alpha: 1
+      normalBlue:
+        red: 232
+        green: 232
+        blue: 232
+        alpha: 1
+      normalGreen:
+        red: 133
+        green: 153
+        blue: 18
+        alpha: 1
+      normalRed:
+        red: 221
+        green: 59
+        blue: 48
+        alpha: 1
+      normalWhite:
+        red: 237
+        green: 232
+        blue: 213
+        alpha: 1
+      normalYellow:
+        red: 181
+        green: 137
+        blue: 35
+        alpha: 1
+    fontFamily: "Hack"
+    fontSize: "15"
+    cursorBlink: false
+  "linter-haml": {}
+  "linter-lua":
+    executablePath: "/usr/local/bin/luac"
+  "linter-scss-lint":
+    executablePath: "/Users/h13ronim/.rbenv/versions/2.2.1/bin/scss-lint"
