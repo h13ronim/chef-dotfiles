@@ -28,21 +28,21 @@ package 'zsh' do
   action :install
 end
 
-git "#{node['etc']['passwd'][node['current_user']]['dir']}/.oh-my-zsh" do
+git "#{Etc.getpwnam(node['user']['id']).dir}/.oh-my-zsh" do
   repository 'https://github.com/robbyrussell/oh-my-zsh.git'
   revision 'master'
   action :checkout
 end
 
-git "#{node['etc']['passwd'][node['current_user']]['dir']}/.oh-my-zsh-custom" do
+git "#{Etc.getpwnam(node['user']['id']).dir}/.oh-my-zsh-custom" do
   repository 'git@github.com:h13ronim/oh-my-zsh-custom.git'
   revision 'master'
   action :checkout
-  user node['current_user']
+  user node['user']['id']
 end
 
-link "#{node['etc']['passwd'][node['current_user']]['dir']}/.zshrc" do
-  to "#{node['etc']['passwd'][node['current_user']]['dir']}/.oh-my-zsh-custom/zshrc"
+link "#{Etc.getpwnam(node['user']['id']).dir}/.zshrc" do
+  to "#{Etc.getpwnam(node['user']['id']).dir}/.oh-my-zsh-custom/zshrc"
 end
 
 execute 'echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells' do

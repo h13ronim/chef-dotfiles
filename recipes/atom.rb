@@ -24,7 +24,7 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-cookbook_file "#{node['etc']['passwd'][node['current_user']]['dir']}/.atom/config.cson" do
+cookbook_file "#{Etc.getpwnam(node['user']['id']).dir}/.atom/config.cson" do
   source "atom/config.cson"
   action :create_if_missing
 end

@@ -24,9 +24,9 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
-git "#{node['etc']['passwd'][node['current_user']]['dir']}/.hammerspoon" do
+git "#{Etc.getpwnam(node['user']['id']).dir}/.hammerspoon" do
   repository 'git@github.com:h13ronim/dothammerspoon.git'
   revision 'master'
   action :checkout
-  user node['current_user']
+  user node['user']['id']
 end
