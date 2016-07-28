@@ -24,7 +24,16 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
+directory "#{Etc.getpwnam(node['user']['id']).dir}/.atom" do
+  owner node['user']['id']
+  group 'staff'
+  mode '0755'
+  action :create
+end
+
 cookbook_file "#{Etc.getpwnam(node['user']['id']).dir}/.atom/config.cson" do
   source "atom/config.cson"
+  owner node['user']['id']
+  group 'staff'
   action :create_if_missing
 end
